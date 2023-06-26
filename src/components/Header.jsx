@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import CartContext from "../context/Context";
 
 const Header = () => {
-  return (
-    <div>Header</div>
-  )
-}
+  const [{ cart }, dispatch] = useContext(CartContext);
 
-export default Header
+  return (
+    <div>
+      <Link to={"/cart"}>
+        <button>Cart {cart.length}</button>
+      </Link>
+    </div>
+  );
+};
+
+export default Header;
