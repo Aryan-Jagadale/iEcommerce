@@ -7,6 +7,9 @@ const Header = () => {
 
   return (
     <div>
+      <Link to={"/"}>
+        <button>Home</button>
+      </Link>
       <Link to={"/cart"}>
         <button>Cart {cart.length}</button>
       </Link>
