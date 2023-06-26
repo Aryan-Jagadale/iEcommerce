@@ -20,7 +20,7 @@ export const productReducer = (state, action) => {
       return {
         ...state,
         cart: state.cart.filter((c) =>
-          c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
+          c.id === action.payload.id && action.payload.qty >= 1 ? (c.qty = action.payload.qty) : c.qty
         ),
       };
     default:
